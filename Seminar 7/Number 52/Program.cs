@@ -10,13 +10,13 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int[,] array = new int[m, n];
-double[] array_sum = new double[n];
+double[] arraySum = new double[n];
 for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
     {
         array[i, j] = new Random().Next(0, 10);
-        array_sum[j] = 0;
+        arraySum[j] = 0;
         Console.Write($"{array[i, j]} ");
     }
     Console.WriteLine();
@@ -27,12 +27,10 @@ for (int j = 0; j < array.GetLength(1); j++)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        array_sum[j] = array_sum[j]+array[i,j];
+        arraySum[j] = arraySum[j] + array[i, j];
     }
-        array_sum[j] = Math.Round((array_sum[j]/array.GetLength(0)),2);
-        
-        Console.Write($"{array_sum[j]} ");
-        
+    arraySum[j] = Math.Round((arraySum[j] / array.GetLength(0)), 2);
+    Console.Write($"{arraySum[j]} ");
 }
-    Console.WriteLine();
+Console.WriteLine();
 
